@@ -1,0 +1,36 @@
+
+## the index folder for STAR, change to mm9 if it is mouse
+STARINDEX: "/gpfs/accounts/kretzler_root/kretzler/manninm/deepSeq/STAR_index_HS_38.86_small/"
+
+## gtf file for annotation and number of threads used for sorting
+
+MYGTF: "/gpfs/accounts/kretzler_root/kretzler/manninm/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf"
+
+PicardPath: "/gpfs/accounts/kretzler_root/kretzler/shared_data/Programs/picardtools/picard-tools-1.141/picard.jar"
+
+
+
+Bowtie2path: "/scratch/kretzler_root/kretzler/shared_data/Programs/bowtie/bowtie2-2.2.3/bowtie2"
+
+refFlat: "/gpfs/accounts/kretzler_root/kretzler/manninm/deepSeq/refFlat.txt"
+
+## start from bam or start from fastq
+from_fastq: True
+
+## use which program to count 
+htseq: True
+GroupdFile: False #Groupfile should list the Sample Directories and pheno data in separate columns
+
+## Plots
+HcCores: 5 #Number of cores for clustering
+Plots: True #True to get PCAs,boxplots, and Clusters
+GeneBootStraps: 25 #Number of Bootstraps for Hierarchical clustering
+TxBootStraps: 25
+StarThreads: 6
+SortThreads: 4
+
+
+# Path to a JSON file with samples and their corresponding FASTQ files.
+SAMPLES_JSON: './samples.json'
+
+CLUSTER_JSON: './cluster.json'

@@ -1,0 +1,38 @@
+EBImage                 Package overview
+EBImage-defunct         Defunct functions in package 'EBImage'
+Image                   Image class
+abind                   Combine Image Arrays
+bwlabel                 Binary segmentation
+channel                 Color and image color mode conversions
+clahe                   Contrast Limited Adaptive Histogram
+                        Equalization
+colorLabels             Color Code Labels
+colormap                Map a Greyscale Image to Color
+combine                 Combine images
+computeFeatures         Compute object features
+dilate                  Perform morphological operations on images
+display                 Image Display
+display-shiny           Shiny Bindings for display
+distmap                 Distance map transform
+drawCircle              Draw a circle on an image.
+equalize                Histogram Equalization
+fillHull                Fill holes in objects
+filter2                 2D Convolution Filter
+floodFill               Region filling
+gblur                   Low-pass Gaussian filter
+localCurvature          Local Curvature
+medianFilter            2D constant time median filtering
+normalize               Intensity values linear scaling
+ocontour                Oriented contours
+otsu                    Calculate Otsu's threshold
+paintObjects            Mark objects in images
+propagate               Voronoi-based segmentation on image manifolds
+readImage               Image I/O
+resize                  Spatial linear transformations
+rmObjects               Object removal and re-indexation
+stackObjects            Places detected objects into an image stack
+thresh                  Adaptive thresholding
+tile                    Tiling/untiling images
+transpose               Image Transposition
+watershed               Watershed transformation and watershed based
+                        object detection
