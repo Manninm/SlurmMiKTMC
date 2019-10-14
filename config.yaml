@@ -26,7 +26,7 @@ HcCores: 5 #Number of cores for clustering
 Plots: True #True to get PCAs,boxplots, and Clusters
 GeneBootStraps: 25 #Number of Bootstraps for Hierarchical clustering
 TxBootStraps: 25
-StarThreads: 6
+StarThreads: 7
 SortThreads: 4
 
 

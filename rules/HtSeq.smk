@@ -4,7 +4,7 @@ rule HtSeq_Count:
 	log: "logs/{sample}HtSeq.log"
 	params: 
 		jobname = "{sample}"
-	threads: 2
+	threads: 3
 	message: "htseq-count {input} : {threads} threads"
 	shell:
 		"""

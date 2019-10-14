@@ -13,7 +13,7 @@ rule STAR_fq:
 	log: "logs/{sample}.starlog"
 	shell:
 		"""
-        STAR --twopassMode Basic --runThreadN {threats} \
+        STAR --twopassMode Basic --runThreadN {threads} \
         --genomeDir {STARINDEX} --outSAMtype BAM SortedByCoordinate \
         --outBAMcompression 10 --outSAMstrandField intronMotif \
         --outBAMsortingThreadN {SortThreads} \

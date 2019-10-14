@@ -1,6 +1,6 @@
 {
     "documenation": {
-        "cmdline": "Use with snakemake -j 999 --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --nodes {cluster.nodes} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {cluster.cpus-per-task} --mem {cluster.mem} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
+        "cmdline": "Use with snakemake -j 2000 --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --nodes {cluster.nodes} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {cluster.cpus-per-task} --mem {cluster.mem} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
     },
     "__default__": {
         "account": "kretzler",
@@ -11,8 +11,8 @@
         "ntasks-per-node": "1",
         "cpus-per-task": "1",
         "mem": "4g",
-        "output": "logs/{log}.out.txt",
-        "error": "logs/{log}.err.txt",
+        "output": "{log}.out.txt",
+        "error": "{log}.err.txt",
         "mail-user": "$USER@umich.edu",
         "mail-type": "ALL"
     },
@@ -32,7 +32,7 @@
     },
 	"HtSeq_Count": {
 		"cpus-per-task": "{threads}",
-        "--mem": "8g",
+        "--mem": "12g",
         "time": "8:00:00",
 		"output": "{log}.out.txt",
 		"error": "{log}.error.log"
@@ -52,9 +52,9 @@
 		"error": "{log}.error.log"
     },
     "STAR_fq": {
-        "time": "36:00:00",
+        "time": "48:00:00",
         "cpus-per-task": "{threads}",
-        "mem": "24g",
+        "mem": "28g",
 		"output": "{log}.out.txt",
 		"error": "{log}.error.log"
     },
