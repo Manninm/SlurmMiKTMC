@@ -17,7 +17,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=1g
-#SBATCH --time=2-00:00
+#SBATCH --time=6-00:00
  
 
 ####  Slurm account and partition specification here
@@ -48,7 +48,7 @@
 
 echo "Running from $(pwd)"
 
-snakemake -j 2000 -p --cluster-config cluster.json --cluster 'sbatch --account {cluster.account} --job-name {cluster.job-name} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {threads} --mem {cluster.mem} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}' 
+snakemake -j 1000 --restart-times 2 --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --nodes {cluster.nodes} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {cluster.cpus-per-task} --mem {cluster.mem} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'
 
 
 ##  If you copied any files to /tmp, make sure you delete them here!

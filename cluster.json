@@ -1,6 +1,6 @@
 {
     "documenation": {
-        "cmdline": "Use with snakemake -j 2000 --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --nodes {cluster.nodes} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {cluster.cpus-per-task} --mem {cluster.mem} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
+        "cmdline": "snakemake -j 2000 --restart-times 2 --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --nodes {cluster.nodes} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {cluster.cpus-per-task} --mem {cluster.mem} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
     },
     "__default__": {
         "account": "kretzler",
@@ -67,8 +67,8 @@
     },
     "Picard": {
         "time": "01:00:00",
-        "cpus-per-task": "2",
-        "mem": "8g",
+        "cpus-per-task": "3",
+        "mem": "12g",
 		"output": "{log}.out.txt",
 		"error": "{log}.error.log"
     },
