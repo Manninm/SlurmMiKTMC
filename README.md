@@ -82,7 +82,7 @@ If you plan on running multiple snakemake pipelines per account/username, you ma
 ```bash 
 alias JobPriority='squeue -u $USER -o "%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R %Q"'squeue -u $USER -o "%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R %Q"
 ```
-In the event that I want to cancel all jobs from a certain pipeline, I can do so by
+In the event that I want to cancel all jobs from a certain pipeline with prefix 17_, I can do so by
 ```bash
 all=$(JobPriority | grep 17_ | awk {'print $1'})
 scancel $all
