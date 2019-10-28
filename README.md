@@ -77,3 +77,13 @@ Sample_70166/   Sample_70166    Sample  Batch
 The directory and sample names should correspond and be in the order as they appear in the directory. The sample and batch columns can be used to designate phenotype data and any batchs you may have. If you have varying 'Disease' types, you can then use this file for differential expression and use the batch column to correct for batch affects. The PCA plotting scripts will plot Disease types in different colors, and different Batchs with different shapes
 
 I have attempted to make this pipeline as streamlined and automatic as possible. It could incorporate differential expression, but I feel that the pipeline completes sufficient tasks for review before Differetial Analysis. In the even that a cohort has Glom and Tub samples, it would be wise to run each separately in their own pipeline. Adding another child directory would be more difficult to code rules for. If there are any plots, qc tools or metrics that you use in your personal analysis, those can be integrated upon request.
+
+If you plan on running multiple snakemake pipelines per account/username, you may wish to add a prefix to _default_ job-name in cluster.json, as well as to job-name in Snakemake.sbat, this will allow you to pull specific job-ids from the squeue command. I have an alias in my bash_profile that returns a specific form of squeue
+```bash 
+alias JobPriority='squeue -u $USER -o "%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R %Q"'squeue -u $USER -o "%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R %Q"
+```
+In the event that I want to cancel all jobs from a certain pipeline, I can do so by
+```bash
+all=$(JobPriority | grep 17_ | awk {'print $1'})
+scancel $all
+```
